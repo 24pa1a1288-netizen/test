@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Processor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Student Grade Processor</h1>
+    <button onclick="printStudentResults()">Show Results</button>
+
+    <div id="results"></div>
+
+    <script>
+        // 1. Variables
+        let schoolName = "Greenwood High";
+        const passingGrade = 50;
+
+        // 2. Array
+        let studentNames = ["Alice", "Bob", "Charlie"];
+
+        // 3. Object
+        let studentGrades = {
+            Alice: 85,
+            Bob: 42,
+            Charlie: 73
+        };
+
+        // 4. Function
+        function printStudentResults() {
+            // Clear previous results
+            let output = "<h2>School: " + schoolName + "</h2>";
+            output += "<ul>";
+
+            // 5. Loop
+            for (let i = 0; i < studentNames.length; i++) {
+                let name = studentNames[i];
+                let grade = studentGrades[name];
+
+                let result = grade >= passingGrade ? "Passed" : "Failed";
+                output += "<li>" + name + " scored " + grade + " - " + result + "</li>";
+            }
+
+            output += "</ul>";
+
+            // Display in the HTML
+            document.getElementById("results").innerHTML = output;
+        }
+
+        // 6. Function will be called when button is clicked
+    </script>
+
+</body>
+</html>
